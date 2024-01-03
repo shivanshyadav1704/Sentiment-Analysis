@@ -1,0 +1,18 @@
+
+Terminal 1
+C:\kafka>  .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+Terminal 2
+C:\kafka>  .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+Create topic
+C:\kafka\bin\windows>  kafka-topics.bat --create --bootstrap-server localhost:9092 --topic fakenews
+
+Start Writing
+C:\kafka\bin\windows>  kafka-console-producer.bat --broker-list localhost:9092 --topic fakenews
+
+Reading from producer
+C:\kafka\bin\windows>kafka-console-consumer.bat --topic fakenews --bootstrap-server localhost:9092 --from-beginning
+
+
+
